@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Management Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="logo">
+            Placement Portal
+        </div>
+
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('students')">Students</a>
+            <a href="#" onclick="showSection('companies')">Companies</a>
+            <a href="#" onclick="showSection('jobs')">Jobs</a>
+            <a href="#" onclick="showSection('applications')">Applications</a>
+            <a href="#" onclick="showSection('dashboard')">Dashboard</a>
+        </nav>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <!-- HOME -->
+
+        <section id="home" class="section">
+
+            <div class="hero">
+
+                <h1>Placement Management Portal</h1>
+
+                <p>
+                    Manage students, companies, job opportunities
+                    and placement applications in one place.
+                </p>
+
+                <button onclick="showSection('jobs')">
+                    View Jobs
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- STUDENTS -->
+
+        <section id="students" class="section hidden">
+
+            <h2>Student List</h2>
+
+            <div id="studentList"></div>
+
+            <h3>Add Student</h3>
+
+            <form id="studentForm">
+
+                <input type="text"
+                       id="studentName"
+                       placeholder="Student Name"
+                       required>
+
+                <input type="email"
+                       id="studentEmail"
+                       placeholder="Email"
+                       required>
+
+                <input type="text"
+                       id="department"
+                       placeholder="Department"
+                       required>
+
+                <input type="number"
+                       id="cgpa"
+                       placeholder="CGPA (5 - 10)"
+                       min="5"
+                       max="10"
+                       step="0.01"
+                       required>
+
+                <input type="number"
+                       id="graduationYear"
+                       placeholder="Graduation Year (2020 onwards)"
+                       min="2020"
+                       step="1"
+                       required>
+
+                <input type="text"
+                       id="skills"
+                       placeholder="Skills">
+
+                <button type="submit">
+                    Add Student
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- COMPANIES -->
+
+        <section id="companies" class="section hidden">
+
+            <h2>Company List</h2>
+
+            <div id="companyList"></div>
+
+            <h3>Add Company</h3>
+
+            <form id="companyForm">
+
+                <input type="text"
+                       id="companyName"
+                       placeholder="Company Name"
+                       required>
+
+                <input type="text"
+                       id="location"
+                       placeholder="Location"
+                       required>
+
+                <input type="text"
+                       id="industry"
+                       placeholder="Industry"
+                       required>
+
+                <input type="text"
+                       id="website"
+                       placeholder="Website">
+
+                <button type="submit">
+                    Add Company
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- JOBS -->
+
+        <section id="jobs" class="section hidden">
+
+            <h2>Job / Drive List</h2>
+
+            <div id="jobList"></div>
+
+            <h3>Add Job</h3>
+
+            <form id="jobForm">
+
+                <input type="number"
+                       id="companyId"
+                       placeholder="Company ID"
+                       min="1"
+                       required>
+
+                <input type="text"
+                       id="jobTitle"
+                       placeholder="Job Title"
+                       required>
+
+                <input type="number"
+                       id="package"
+                       placeholder="Package (LPA)"
+                       min="0.1"
+                       step="0.1"
+                       required>
+
+                <input type="text"
+                       id="eligibility"
+                       placeholder="Eligibility"
+                       required>
+
+                <input type="date"
+                       id="deadline"
+                       required>
+
+                <button type="submit">
+                    Add Job
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- APPLICATIONS -->
+
+        <section id="applications" class="section hidden">
+
+            <h2>Applications</h2>
+
+            <div id="applicationList"></div>
+
+            <h3>Apply for Job</h3>
+
+            <form id="applicationForm">
+
+                <input type="number"
+                       id="applicationStudentId"
+                       placeholder="Student ID"
+                       min="1"
+                       required>
+
+                <input type="number"
+                       id="applicationJobId"
+                       placeholder="Job ID"
+                       min="1"
+                       required>
+
+                <input type="date"
+                       id="applicationDate"
+                       required>
+
+                <select id="applicationStatus">
+
+                    <option value="Applied">Applied</option>
+                    <option value="Shortlisted">Shortlisted</option>
+                    <option value="Selected">Selected</option>
+                    <option value="Rejected">Rejected</option>
+
+                </select>
+
+                <button type="submit">
+                    Apply
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="section hidden">
+
+            <h2>Placement Dashboard</h2>
+
+            <div class="dashboard">
+
+                <div class="card">
+                    <h3 id="studentCount">0</h3>
+                    <p>Students</p>
+                </div>
+
+                <div class="card">
+                    <h3 id="companyCount">0</h3>
+                    <p>Companies</p>
+                </div>
+
+                <div class="card">
+                    <h3 id="jobCount">0</h3>
+                    <p>Jobs</p>
+                </div>
+
+                <div class="card">
+                    <h3 id="applicationCount">0</h3>
+                    <p>Applications</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
